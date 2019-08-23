@@ -1,5 +1,6 @@
 import React from 'react';
-import requestMIDIAccess from '../midiAccess';
+import requestMIDIAccess from '../accessPoints/midiAccess';
+import keyboardAccess from '../accessPoints/keyboardAccess';
 
 class Synth extends React.Component {
   componentDidMount = () => {
@@ -8,11 +9,12 @@ class Synth extends React.Component {
     this.activeTones = {};
     this.createTone();
     requestMIDIAccess( this.playNote, this.stopNote );
+    keyboardAccess.request( this.playNote, this.stopNote );
   }
 
   createTone = () => {
     this.Tone = ( context => {
-      function Tone(frequency){
+      function Tone( frequency ) {
         this.frequency = frequency;
         this.oscillators = [];
         this.context = context;
@@ -39,14 +41,22 @@ class Synth extends React.Component {
   }
 
   playNote = ( key, freq ) => {
-    var tone = new this.Tone( freq );
-    this.activeTones[ key ] = tone;
-    tone.start();
+    if ( !this.activeTones[ key ] && freq ) {
+      var tone = new this.Tone( freq );
+      this.activeTones[ key ] = tone;
+      tone.start();
+    }
   }
 
   stopNote = ( key ) => {
-    this.activeTones[ key ].stop();
-    delete this.activeTones[ key ];
+    if ( this.activeTones[ key ] ) {
+      this.activeTones[ key ].stop();
+      delete this.activeTones[ key ];
+    }
+  }
+
+  componentWillUnmount = () => {
+    keyboardAccess.remove();
   }
 
   render() {

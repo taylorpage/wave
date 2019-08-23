@@ -1,4 +1,4 @@
-import freqMap from './keyMaps';
+import maps from '../keyMaps';
 
 const requestMIDIAccess = ( midiMessageDown, midiMessageUp, stateChange) => {
   navigator.requestMIDIAccess().then( access => {
@@ -6,11 +6,10 @@ const requestMIDIAccess = ( midiMessageDown, midiMessageUp, stateChange) => {
       e.onmidimessage = ( m ) => {
         const [command, key, velocity] = m.data;
         if ( command < 140 ) {
-          midiMessageUp && midiMessageUp( key, freqMap[ key ] );
+          midiMessageUp && midiMessageUp( key, maps.freqMap[ key ] );
         } else {
-          midiMessageDown && midiMessageDown( key, freqMap[ key ] );
+          midiMessageDown && midiMessageDown( key, maps.freqMap[ key ] );
         }
-        
       }
       return true;
     });

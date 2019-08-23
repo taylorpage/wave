@@ -130,4 +130,25 @@ const freqMap = {
     0: 8.18,
 }
 
-export default freqMap;
+const keyBoardMap = {
+    65: freqMap[ 60 ], // a
+    87: freqMap[ 61 ], // w
+    83: freqMap[ 62 ], // s
+    69: freqMap[ 63 ], // e
+    68: freqMap[ 64 ], // d
+    70: freqMap[ 65 ], // f
+    84: freqMap[ 66 ], // t
+    71: freqMap[ 67 ], // g
+    89: freqMap[ 68 ], // y
+    72: freqMap[ 69 ], // h
+    85: freqMap[ 70 ], // u
+    74: freqMap[ 71 ], // j
+    75: freqMap[ 72 ], // k
+    79: freqMap[ 73 ], // o
+    76: freqMap[ 74 ], // l
+    80: freqMap[ 75 ], // p
+    186: freqMap[ 76 ], // ;
+    222: freqMap[ 77 ], // '
+}
+
+export default { freqMap: freqMap, keyBoardMap: keyBoardMap };

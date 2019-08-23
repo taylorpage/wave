@@ -63,3 +63,11 @@
 .whiteKeys .key {
   width: 100%;
 }
+
+.black.pressed {
+  background: rgb( 50, 50, 50 );
+}
+
+.white.pressed {
+  background: rgb( 220, 220, 220 );
+}

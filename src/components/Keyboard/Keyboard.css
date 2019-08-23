@@ -1,44 +1,65 @@
 .key {
-    width: 3vw;
+  width: 3vw;
+  height: 160px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.keys {
+  border-collapse: collapse;
 }
 
 .keyboard {
-    text-align: center;
-    margin: 0 auto;
-    padding: 0 10vw;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 10vw;
 }
 
 .white {
-    background-color: white;
+  background: -moz-linear-gradient(90deg, rgba(179,179,179,1) 0%, rgba(247,247,247,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(247,247,247,1)), color-stop(100%, rgba(179,179,179,1)));
+  background: -webkit-linear-gradient(90deg, rgba(179,179,179,1) 0%, rgba(247,247,247,1) 100%);
+  background: -o-linear-gradient(90deg, rgba(179,179,179,1) 0%, rgba(247,247,247,1) 100%);
+  background: -ms-linear-gradient(90deg, rgba(179,179,179,1) 0%, rgba(247,247,247,1) 100%);
+  background: linear-gradient(0deg, rgba(179,179,179,1) 0%, rgba(247,247,247,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F7F7F7', endColorstr='#B3B3B3',GradientType=0 );
 }
 
 .black {
-    background-color: black;
+  background: -moz-linear-gradient(90deg, rgba(20,20,20,1) 0%, rgba(92,92,92,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(92,92,92,1)), color-stop(100%, rgba(20,20,20,1)));
+  background: -webkit-linear-gradient(90deg, rgba(20,20,20,1) 0%, rgba(92,92,92,1) 100%);
+  background: -o-linear-gradient(90deg, rgba(20,20,20,1) 0%, rgba(92,92,92,1) 100%);
+  background: -ms-linear-gradient(90deg, rgba(20,20,20,1) 0%, rgba(92,92,92,1) 100%);
+  background: linear-gradient(0deg, rgba(20,20,20,1) 0%, rgba(92,92,92,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5C5C5C', endColorstr='#141414',GradientType=0 );
 }
 
 .blackKeys {
-    margin-left: 3%;
-    margin-right: 3%;
-    margin-bottom: -86px;
-    width: 100%;
-    z-index: 100;
-    position: relative;
+  margin-left: 4.33%;
+  margin-right: 4.33%;
+  margin-bottom: -82px;
+  width: 100%;
+  z-index: 100;
+  position: relative;
 }
 
-.blackKeys th {
-    height: 80px;
+.blackKeys .key {
+  height: 80px;
 }
 
-.blackKeys th.hidden {
-    background-color: transparent;
+.blackKeys .key.hidden {
+  background-color: transparent;
+  background: none;
+  border: none;
 }
 
 .whiteKeys {
-    width: 100%;
-    z-index: 0;
-    position: relative;
+  width: 100%;
+  z-index: 0;
+  position: relative;
 }
 
-.whiteKeys th {
-    height: 140px;
+.whiteKeys .key {
+  width: 100%;
 }

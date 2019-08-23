@@ -12,7 +12,7 @@ class Keyboard extends React.Component {
 
   createWhiteKeys = () => {
 
-    for ( let i=1; i<=17; i++ ) {
+    for ( let i=1; i<=14; i++ ) {
       this.whiteKeys.push( i );
     }
   }
@@ -20,23 +20,32 @@ class Keyboard extends React.Component {
   render() {
     return (
       <div className="keyboard">
-        <table className="blackKeys">
+        <table className="blackKeys keys">
           <tr>
             {
               this.whiteKeys.map( ( key, i ) => {
                 return (
-                  <th
-                    className={ `key black ${ this.hiddenKeys.indexOf( i ) > -1 && 'hidden' } ` }
-                  >
+                  <th>
+                    <div
+                      className={ `key black ${ this.hiddenKeys.indexOf( i ) > -1 && 'hidden' } ` }
+                    ></div>
                   </th>
                 );
               })
             }
           </tr>
         </table>
-        <table className="whiteKeys">
+        <table className="whiteKeys keys">
           <tr>
-            { this.whiteKeys.map( key => <th className="key white"></th>) }
+            {
+              this.whiteKeys.map( key => {
+                return (
+                  <th>
+                    <div className="key white"></div>
+                  </th>
+                );
+              })
+            }
           </tr>
         </table>
       </div>

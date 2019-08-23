@@ -21,32 +21,36 @@ class Keyboard extends React.Component {
     return (
       <div className="keyboard">
         <table className="blackKeys keys">
-          <tr>
-            {
-              this.whiteKeys.map( ( key, i ) => {
-                return (
-                  <th>
-                    <div
-                      className={ `key black ${ this.hiddenKeys.indexOf( i ) > -1 && 'hidden' } ` }
-                    ></div>
-                  </th>
-                );
-              })
-            }
-          </tr>
+          <tbody>
+            <tr>
+              {
+                this.whiteKeys.map( ( key, i ) => {
+                  return (
+                    <th key={ `black-${ i }` }>
+                      <div
+                        className={ `key black ${ this.hiddenKeys.indexOf( i ) > -1 && 'hidden' } ` }
+                      ></div>
+                    </th>
+                  );
+                })
+              }
+            </tr>
+          </tbody>
         </table>
         <table className="whiteKeys keys">
-          <tr>
-            {
-              this.whiteKeys.map( key => {
-                return (
-                  <th>
-                    <div className="key white"></div>
-                  </th>
-                );
-              })
-            }
-          </tr>
+          <tbody>
+            <tr>
+              {
+                this.whiteKeys.map( ( key, i ) => {
+                  return (
+                    <th key={ `white-${ i }` }>
+                      <div className="key white"></div>
+                    </th>
+                  );
+                })
+              }
+            </tr>
+          </tbody>
         </table>
       </div>
     );

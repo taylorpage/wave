@@ -1,6 +1,8 @@
 import React from 'react';
-import requestMIDIAccess from '../accessPoints/midiAccess';
-import keyboardAccess from '../accessPoints/keyboardAccess';
+import requestMIDIAccess from '../../accessPoints/midiAccess';
+import keyboardAccess from '../../accessPoints/keyboardAccess';
+import Keyboard from '../Keyboard/Keyboard';
+import './Synth.css';
 
 class Synth extends React.Component {
   componentDidMount = () => {
@@ -60,7 +62,11 @@ class Synth extends React.Component {
   }
 
   render() {
-    return <h1>Synth</h1>;
+    return (
+      <div className="synth">
+        <Keyboard />
+      </div>
+    );
   }
 }
 

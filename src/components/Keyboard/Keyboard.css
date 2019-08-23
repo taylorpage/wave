@@ -1,0 +1,44 @@
+.key {
+    width: 3vw;
+}
+
+.keyboard {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 10vw;
+}
+
+.white {
+    background-color: white;
+}
+
+.black {
+    background-color: black;
+}
+
+.blackKeys {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: -86px;
+    width: 100%;
+    z-index: 100;
+    position: relative;
+}
+
+.blackKeys th {
+    height: 80px;
+}
+
+.blackKeys th.hidden {
+    background-color: transparent;
+}
+
+.whiteKeys {
+    width: 100%;
+    z-index: 0;
+    position: relative;
+}
+
+.whiteKeys th {
+    height: 140px;
+}

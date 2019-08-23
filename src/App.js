@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import requestMIDIAccess from './midiAccess';
+import Synth from './components/Synth';
 
 function App() {
-  requestMIDIAccess();
   return (
     <div className="App">
+      <Synth></Synth>
     </div>
   );
 }

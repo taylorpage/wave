@@ -11,7 +11,6 @@ class Keyboard extends React.Component {
   }
 
   createWhiteKeys = () => {
-
     for ( let i=1; i<=14; i++ ) {
       this.whiteKeys.push( i );
     }

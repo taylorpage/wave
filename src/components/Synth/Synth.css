@@ -1,7 +1,50 @@
 .synth {
-    background-color: blue;
+    background: -moz-linear-gradient(45deg, rgba(153,218,255,1) 0%, rgba(0,255,200,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(153,218,255,1)), color-stop(100%, rgba(0,255,200,1))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, rgba(153,218,255,1) 0%, rgba(0,255,200,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, rgba(153,218,255,1) 0%, rgba(0,255,200,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, rgba(153,218,255,1) 0%, rgba(0,255,200,1) 100%); /* ie10+ */
+    background: linear-gradient(45deg, rgba(153,218,255,1) 0%, rgba(0,255,200,1) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00FFC8', endColorstr='#99DAFF',GradientType=1 ); /* ie6-9 */
     width: 80%;
     height: 80vh;
     margin: 0 auto;
     margin-top: 8vh;
+    position: relative;
+}
+
+.keyboard-container {
+    background-image: url( '../../assets/bamboo.png' );
+    padding: 4px 0 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.panel {
+    position: absolute;
+    background-image: url( '../../assets/bamboo.png' );
+    background-position: center right;
+    width: 3vw;
+    height: 100%;
+    z-index: 100;
+}
+
+.panel.left {
+    left: 0;
+}
+
+.panel.right {
+    right: 0;
+}
+
+.logo {
+    position: absolute;
+    background-image: url( '../../assets/wave.png' );
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 120px;
+    top: 20px;
+    left: 50px;
+    height: 80px;
 }

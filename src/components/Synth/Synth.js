@@ -64,7 +64,12 @@ class Synth extends React.Component {
   render() {
     return (
       <div className="synth">
-        <Keyboard />
+        <div className="logo"></div>
+        <div className="panel left"></div>
+        <div className="panel right"></div>
+        <div className="keyboard-container">
+          <Keyboard />
+        </div>
       </div>
     );
   }

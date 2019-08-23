@@ -1,8 +1,8 @@
 import React from 'react';
 import './Keyboard.css';
+import maps from '../../keyMaps';
 
 class Keyboard extends React.Component {
-
   constructor() {
     super();
     this.whiteKeys = [];
@@ -16,6 +16,16 @@ class Keyboard extends React.Component {
     }
   }
 
+  handleMouseDown = ( keyId ) => {
+    const freqRef = maps.pianoMap[ keyId ];
+    const freq = maps.freqMap[ freqRef ];
+    this.props.play( keyId, freq );
+  }
+
+  handleMouseUp = ( keyId ) => {
+    this.props.stop( keyId );
+  }
+
   render() {
     return (
       <div className="keyboard">
@@ -27,7 +37,9 @@ class Keyboard extends React.Component {
                   return (
                     <th key={ `black-${ i }` }>
                       <div
-                        className={ `key black ${ this.hiddenKeys.indexOf( i ) > -1 && 'hidden' } ` }
+                        className={ `key black ${ this.hiddenKeys.indexOf( i ) > -1 && 'hidden' }` }
+                        onMouseDown={ this.handleMouseDown.bind( this, `b-${ i }` ) }
+                        onMouseUp={ this.handleMouseUp.bind( this, `b-${ i }` ) }
                       ></div>
                     </th>
                   );
@@ -43,7 +55,11 @@ class Keyboard extends React.Component {
                 this.whiteKeys.map( ( key, i ) => {
                   return (
                     <th key={ `white-${ i }` }>
-                      <div className="key white"></div>
+                      <div
+                        className="key white"
+                        onMouseDown={ this.handleMouseDown.bind( this, `w-${ i }` ) }
+                        onMouseUp={ this.handleMouseUp.bind( this, `w-${ i }` ) }
+                      ></div>
                     </th>
                   );
                 })

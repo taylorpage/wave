@@ -68,7 +68,7 @@ class Synth extends React.Component {
         <div className="panel left"></div>
         <div className="panel right"></div>
         <div className="keyboard-container">
-          <Keyboard />
+          <Keyboard play={ this.playNote } stop={ this.stopNote } />
         </div>
       </div>
     );

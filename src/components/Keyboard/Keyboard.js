@@ -1,6 +1,7 @@
 import React from 'react';
 import './Keyboard.css';
 import maps from '../../keyMaps';
+import { connect } from 'react-redux';
 
 class Keyboard extends React.Component {
   constructor() {
@@ -27,6 +28,7 @@ class Keyboard extends React.Component {
   handleMouseUp = ( keyId ) => {
     this.props.stop( keyId );
     this.setPressedKeys( keyId, false );
+    this.props.dispatch({ type: 'KEY_DOWN', text: 'this is a test' })
   }
 
   setPressedKeys( key, status ) {
@@ -88,4 +90,4 @@ class Keyboard extends React.Component {
   }
 }
 
-export default Keyboard;
+export default connect()( Keyboard );

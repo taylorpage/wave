@@ -179,4 +179,31 @@ const pianoMap = {
   'w-13': 83,
 }
 
-export default { freqMap: freqMap, keyBoardMap: keyBoardMap, pianoMap: pianoMap };
+// Maps keycodes to piano key ids
+const keyCodeToPianoMap = {
+  65: 'w-0', // a
+  87: 'b-0', // w
+  83: 'w-1', // s
+  69: 'b-1', // e
+  68: 'w-2', // d
+  70: 'w-3', // f
+  84: 'b-3', // t
+  71: 'w-4', // g
+  89: 'b-4', // y
+  72: 'w-5', // h
+  85: 'b-5', // u
+  74: 'w-6', // j
+  75: 'w-7', // k
+  79: 'b-7', // o
+  76: 'w-8', // l
+  80: 'b-8', // p
+  186: 'w-9', // ;
+  222: 'w-10', // '
+};
+
+export default {
+  freqMap: freqMap,
+  keyBoardMap: keyBoardMap,
+  pianoMap: pianoMap,
+  keyCodeToPianoMap: keyCodeToPianoMap,
+};

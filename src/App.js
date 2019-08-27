@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Synth from './components/Synth/Synth';
+import SynthContainer from './containers/SynthContainer';
 
 function App() {
   return (
     <div className="App">
-      <Synth></Synth>
+      <SynthContainer></SynthContainer>
     </div>
   );
 }

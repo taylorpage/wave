@@ -48,6 +48,7 @@ class Synth extends React.Component {
       this.activeTones[ key ] = tone;
       tone.start();
     }
+    console.log( this.props );
   }
 
   stopNote = ( key ) => {
